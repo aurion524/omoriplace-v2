@@ -1,39 +1,24 @@
 // ==UserScript==
-// @name         r/OMORI Place Overlay
+// @name         r/OMORI place template
 // @namespace    http://tampermonkey.net/
-// @version      3.7
-// @description  Keep the canvas beautiful!
-// @author       FORKED FROM R/ROCKETLEAGUE! | Adapted by u/kylomorales for r/RocketLeague, Original author oralekin from osu! /r/osuplace, Rocket League template by u/WestonHawk
+// @version      0.1
+// @description  r/omori template | OMORI WILL NOT SUCCUMB
+// @author       forked from a whole bunch of other people 
 // @match        https://hot-potato.reddit.com/embed*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=reddit.com
-// @updateURL    https://github.com/Tonny2442/omoriplace/raw/main/egg_people_unite_overlay.user.js
-// @downloadURL  https://github.com/Tonny2442/omoriplace/raw/main/egg_people_unite_overlay.user.js
 // @grant        none
-// OMORI WILL NOT SUCCUMB!
 // ==/UserScript==
 if (window.top !== window.self) {
     window.addEventListener('load', () => {
-        // Load the image
-        const image = document.createElement("img");
-        image.src = "https://github.com/Tonny2442/omoriplace/raw/main/new_overlay.png";
-        image.onload = () => {
-            image.style = `position: absolute; left: 0; top: 0; width: ${image.width/3}px; height: ${image.height/3}px; image-rendering: pixelated; z-index: 1`;
-        };
-      
-        // Add the image as overlay
-        const camera = document.querySelector("mona-lisa-embed").shadowRoot.querySelector("mona-lisa-camera");
-        const canvas = camera.querySelector("mona-lisa-canvas");
-        canvas.shadowRoot.querySelector('.container').appendChild(image);
-      
-        // Add a style to put a hole in the pixel preview (to see the current or desired color)
-        const waitForPreview = setInterval(() => {
-            const preview = camera.querySelector("mona-lisa-pixel-preview");
-            if (preview) {
-              clearInterval(waitForPreview);
-              const style = document.createElement('style')
-              style.innerHTML = '.pixel { clip-path: polygon(-20% -20%, -20% 120%, 37% 120%, 37% 37%, 62% 37%, 62% 62%, 37% 62%, 37% 120%, 120% 120%, 120% -20%); }'
-              preview.shadowRoot.appendChild(style);
-            }
-        }, 100);
+            document.getElementsByTagName("mona-lisa-embed")[0].shadowRoot.children[0].getElementsByTagName("mona-lisa-canvas")[0].shadowRoot.children[0].appendChild(
+        (function () {
+            const i = document.createElement("img");
+            i.src = "https://github.com/Tonny2442/omoriplace/raw/main/new_overlay.png";
+            i.style = "position: absolute;left: 0;top: 0;image-rendering: pixelated;width: 2000px;height: 1000px;";
+            console.log(i);
+            return i;
+        })())
+ 
     }, false);
+ 
 }
