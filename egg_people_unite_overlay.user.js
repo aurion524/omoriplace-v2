@@ -12,7 +12,7 @@ if (window.top !== window.self) {
     window.addEventListener('load', () => {
         // Load the image
         const image = document.createElement("img");
-        image.src = "https://github.com/Tonny2442/omoriplace/raw/main/template1overlay.png";
+        image.src = "https://github.com/aurion524/-r-OMORI-place-template-when-tonny-s-asleep/blob/main/template1overlayoysm.png";
         image.onload = () => {
             image.style = `position: absolute; left: 0; top: 0; width: ${image.width/3}px; height: ${image.height/3}px; image-rendering: pixelated; z-index: 1`;
         };
