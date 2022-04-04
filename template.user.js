@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         r/OMORI TEST
+// @name         r/OMORI PLACE TEMPLATE
 // @namespace    http://tampermonkey.net/
 // @version      2
 // @description  OMORI WILL NOT SUCCUMB
